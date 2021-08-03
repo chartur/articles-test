@@ -1,0 +1,30 @@
+@import "../../../theme/variables.scss";
+
+table {
+  table-layout: fixed ;
+}
+td {
+  cursor: pointer;
+  position: relative;
+}
+td.inactive {
+  color: $muted-text;
+}
+.arrow {
+  font-size: 25px;
+  cursor: pointer;
+}
+td.active span:after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: -1;
+  background: $primary;
+}
+td.active span {
+  color: $text-color;
+}

@@ -1,0 +1,20 @@
+@import "../../../theme/variables.scss";
+
+.page-count {
+  width: 30px;
+  height: 30px;
+  color: $text-color;
+  background: $primary;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+.page-title {
+  color: $muted-text;
+  font-size: 18px;
+  line-height: 30px;
+  height: 30px;
+  font-weight: bold;
+  background: $card-header;
+}

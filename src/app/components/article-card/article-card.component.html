@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-12 col-md-6">
+    <h6 class="mb-0">{{ article.title }} {{ article.date | date: 'hh:mm' }} Uhr</h6>
+    <div class="mb-2">
+      <fa-icon [icon]="calendarIcon"></fa-icon>
+      <span class="article-date"> {{ article.date | date: 'dd.MM.YYYY' }} </span>
+    </div>
+    <div class="article-desc">
+      {{ article.desc }}
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mt-2 mt-md-0">
+    <div class="row">
+      <div class="col-4">
+        {{ article.price }} Euro
+      </div>
+      <div class="col-4">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="price-minus counter-buttons" (click)="minusCount()">
+            <fa-icon [icon]="minusIcon"></fa-icon>
+          </div>
+          <select class="form-control d-inline-block price-select">
+            <option [selected]="i === selectedCount" [value]="i" *ngFor="let count of articleCount; let i = index">{{ i }}</option>
+          </select>
+          <div class="price-plus counter-buttons" (click)="plusCount()">
+            <fa-icon [icon]="plusIcon"></fa-icon>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        {{ selectedCount * article.price | price }}
+      </div>
+    </div>
+  </div>
+
+</div>

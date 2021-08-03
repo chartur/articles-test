@@ -1,0 +1,23 @@
+<div class="mb-2 d-flex justify-content-between align-items-center">
+  <div class="arrow arrow-left" (click)="toPreviousMonth()">
+    <fa-icon [icon]="leftArrow"></fa-icon>
+  </div>
+  <p class="calendar-title flex-grow-1 mb-0 text-center fw-bold">{{ monthString }}</p>
+  <div class="arrow arrow-left" (click)="toNextMonth()">
+    <fa-icon [icon]="rightArrow"></fa-icon>
+  </div>
+</div>
+<table class="w-100 table-bordered">
+  <thead>
+    <tr class="text-center">
+      <th class="py-2" *ngFor="let weekDay of weekDays">{{ weekDay }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let week of days">
+      <td class="py-3 text-center" (click)="selectDay(day)" [class.active]="day.date.isSame(selectedDate)" [class.inactive]="!day.active" *ngFor="let day of week">
+        <span>{{ day.d }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

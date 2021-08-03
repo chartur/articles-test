@@ -1,0 +1,18 @@
+<app-article-title></app-article-title>
+
+<div *ngIf="articles$ | async as arts">
+  <div *ngIf="arts.length; else noArticles">
+    <div class="mb-4" *ngFor="let article of arts">
+      <app-article-card [article]="article"></app-article-card>
+      <hr>
+    </div>
+  </div>
+
+  <ng-template #noArticles>
+    <div class="empty-state">
+      There are no any articles for current date!
+    </div>
+  </ng-template>
+</div>
+
+
